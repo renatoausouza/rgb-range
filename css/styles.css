@@ -1,17 +1,29 @@
+body {
+  font-family: verdana, sans-serif;
+  padding: 20px;
+  align-items: center;
+}
+h1 {
+  font-size: 2em;
+  margin-top: 50px auto 0 auto;
+}
+
 .content {
   display: flex;
   flex-direction: row;
 }
 
-.div-range-label {
+.divLabel {
   display: flex;
 }
-.output-value {
+
+.inputText {
   width: 25px;
   text-align: center;
 }
-#showColor {
-  background-color: rgb(0, 0, 0);
+
+#divShowColor {
+  border-style: solid;
   display: flex;
   margin-left: 10px;
   height: 130px;

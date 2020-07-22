@@ -2,63 +2,66 @@
 <html lang="">
   <head>
     <meta charset="utf-8" />
-    <title>Title Page</title>
+    <title>RGB Color</title>
     <link href="./css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 class="text-center">Practical Work - Picking a color using RGB</h1>
+    <h1 class="text-center">Picking a color using RGB</h1>
 
     <div class="content">
       <form>
-        <div class="div-range-label">(R) Red:</div>
+        <div class="divLabel">(R) Red:</div>
         <input
-          id="inputValueRed"
-          class="form-control"
+          id="inputRangeRed"
+          class="inputRange"
           type="range"
+          value="0"
           min="0"
           max="255"
         />
         <input
-          id="outputValueRed"
-          class="output-value"
+          id="inputTextRed"
+          class="inputText"
           type="text"
           placeholder="0"
           disabled
         />
 
-        <div class="div-range-label">(G) Green:</div>
+        <div class="divLabel">(G) Green:</div>
         <input
-          id="inputValueGreen"
-          class="form-control"
+          id="inputRangeGreen"
+          class="inputRange"
           type="range"
+          value="0"
           min="0"
           max="255"
         />
         <input
-          id="outputValueGreen"
-          class="output-value"
+          id="inputTextGreen"
+          class="inputText"
           type="text"
           placeholder="0"
           disabled
         />
 
-        <div class="div-range-label">(B) Blue:</div>
+        <div class="divLabel">(B) Blue:</div>
         <input
-          id="inputValueBlue"
-          class="form-control"
+          id="inputRangeBlue"
+          class="inputRange"
           type="range"
+          value="0"
           min="0"
           max="255"
         />
         <input
-          id="outputValueBlue"
-          class="output-value"
+          id="inputTextBlue"
+          class="inputText"
           type="text"
           placeholder="0"
           disabled
         />
       </form>
-      <div id="showColor"></div>
+      <div id="divShowColor"></div>
     </div>
 
     <script src="./js/script.js"></script>

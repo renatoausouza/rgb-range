@@ -1,55 +1,60 @@
 window.addEventListener('load', start);
 
-var outputRed = document
-  .querySelector('#inputValueRed')
-  .addEventListener('input', changeShowColor);
-var outputGreen = document
-  .querySelector('#inputValueGreen')
-  .addEventListener('input', changeShowColor);
-var outputBlue = document
-  .querySelector('#inputValueBlue')
-  .addEventListener('input', changeShowColor);
+var inputRangeRed = null,
+  inputRangeGreen = null,
+  inputRangeBlue = null;
+
+var inputTextRed = null,
+  inputTextGreen = null,
+  inputTextBlue = null;
+
+var divShowColor = null;
+
+var red = 0,
+  green = 0,
+  blue = 0;
 
 function start() {
-  activateInput();
+  mapping();
+  sync();
 }
 
-function changeShowColor() {
-  var red = document.querySelector('#inputValueRed').value;
-  var green = document.querySelector('#inputValueGreen').value;
-  var blue = document.querySelector('#inputValueBlue').value;
-  var rgbString = 'rgb(' + red + ',' + green + ',' + blue + ')';
-  console.log(rgbString);
-  var divShowColor = (document.querySelector(
-    '#showColor'
-  ).style.backgroundColor = rgbString);
+function mapping() {
+  inputRangeRed = document.querySelector('#inputRangeRed');
+  inputRangeGreen = document.querySelector('#inputRangeGreen');
+  inputRangeBlue = document.querySelector('#inputRangeBlue');
+
+  inputTextRed = document.querySelector('#inputTextRed');
+  inputTextGreen = document.querySelector('#inputTextGreen');
+  inputTextBlue = document.querySelector('#inputTextBlue');
+
+  divShowColor = document.querySelector('#divShowColor');
 }
 
-function activateInput() {
-  //Get red values
-  var inputValueRed = document.querySelector('#inputValueRed');
-  var outputValueRed = document.querySelector('#outputValueRed');
-  inputValueRed.oninput = function () {
-    var result = (document.querySelector(
-      '#outputValueRed'
-    ).placeholder = outputValueRed.innerHTML = this.value);
-  };
+function sync() {
+  inputRangeRed.addEventListener('change', handleChange);
+  inputRangeGreen.addEventListener('change', handleChange);
+  inputRangeBlue.addEventListener('change', handleChange);
+}
 
-  //Get green values
-  var inputValueGreen = document.querySelector('#inputValueGreen');
-  var outputValueGreen = document.querySelector('#outputValueGreen');
-  inputValueGreen.oninput = function () {
-    var result = (document.querySelector(
-      '#outputValueGreen'
-    ).placeholder = outputValueGreen.innerHTML = this.value);
-  };
+function handleChange(event) {
+  switch (event.target.id) {
+    case 'inputRangeRed':
+      red = event.target.value;
+      inputTextRed.value = red;
+      break;
+    case 'inputRangeGreen':
+      green = inputRangeGreen.value;
+      inputTextGreen.value = green;
+      break;
+    case 'inputRangeBlue':
+      blue = inputRangeBlue.value;
+      inputTextBlue.value = blue;
+      break;
+  }
+  updateColor();
+}
 
-  //Get blue values
-  var inputValueBlue = document.querySelector('#inputValueBlue');
-  var outputValueBlue = document.querySelector('#outputValueBlue');
-  inputValueBlue.oninput = function () {
-    var result = (document.querySelector(
-      '#outputValueBlue'
-    ).placeholder = outputValueBlue.innerHTML = this.value);
-  };
+function updateColor() {
+  divShowColor.style.backgroundColor = `rgb(${red},${green},${blue})`;
 }
