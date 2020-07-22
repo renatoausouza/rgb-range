@@ -1,16 +1,16 @@
 window.addEventListener('load', start);
 
-var inputRangeRed = null,
+let inputRangeRed = null,
   inputRangeGreen = null,
   inputRangeBlue = null;
 
-var inputTextRed = null,
+let inputTextRed = null,
   inputTextGreen = null,
   inputTextBlue = null;
 
-var divShowColor = null;
+let divShowColor = null;
 
-var red = 0,
+let red = 0,
   green = 0,
   blue = 0;
 
@@ -44,11 +44,11 @@ function handleChange(event) {
       inputTextRed.value = red;
       break;
     case 'inputRangeGreen':
-      green = inputRangeGreen.value;
+      green = event.target.value;
       inputTextGreen.value = green;
       break;
     case 'inputRangeBlue':
-      blue = inputRangeBlue.value;
+      blue = event.target.value;
       inputTextBlue.value = blue;
       break;
   }
