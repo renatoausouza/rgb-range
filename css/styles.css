@@ -1,0 +1,19 @@
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.div-range-label {
+  display: flex;
+}
+.output-value {
+  width: 25px;
+  text-align: center;
+}
+#showColor {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  margin-left: 10px;
+  height: 130px;
+  width: 130px;
+}
