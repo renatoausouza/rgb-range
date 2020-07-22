@@ -1,1 +1,1 @@
-# rgb-ranger
+# rgb-range
